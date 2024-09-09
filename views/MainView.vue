@@ -212,16 +212,56 @@ const projectsTitle = `projects (w/ ${darkhorseLink})`;
 
 const rentFree = [
     {
-        name: `"how about two reds, a blue, and an orange?"`,
+        name: '"how about two reds, a blue, and an orange?"',
         url: 'https://homestarrunner.com/toons/lookin-at-a-thing-in-a-bag'
     },
     {
-        name: `"today on the underwater world, we will explore the territory of the dreaded bubblefish."`,
+        name: '"today on the underwater world, we will explore the territory of the dreaded bubblefish."',
         url: 'https://www.albinoblacksheep.com/flash/demented'
     },
     {
-        name: `"what kind of music is that? like, a bossa nova beat?"`,
+        name: '"what kind of music is that? like, a bossa nova beat?"',
         url: 'https://www.youtube.com/watch?v=B_qnI1WrlnU'
+    },
+    {
+        name: '"right when he starts firing to try to backboost me, the double. body armor. two quick ones." (explicit)',
+        url: 'https://www.youtube.com/watch?v=oYmqJl4MoNI'
+    },
+    {
+        name: '"never let an LLM speak for you ... never let an LLM think for you."',
+        url: 'https://roe.dev/blog/using-ai-in-open-source'
+    },
+    {
+        name: '"types exist no matter what. you can put them in your code, or in your mind."',
+        url: 'https://twitter.com/giuseppelt/status/1699500387466633307'
+    },
+    {
+        name: '"not having been to war is something to be proud of."',
+        url: 'https://www.imdb.com/title/tt23289160/'
+    },
+    {
+        name: `"they pressed the similes by which i'd named them on until they were lies, telling a truth they'd never been able to before."`,
+        url: 'https://www.goodreads.com/book/show/9265453-embassytown'
+    },
+    {
+        name: `i can't have this becoming a dream again.`,
+        url: 'https://myanimelist.net/anime/28735/Shouwa_Genroku_Rakugo_Shinjuu'
+    },
+    {
+        name: '"targets quickly cease to be a way of measuring performance and become ends in themselves."',
+        url: 'https://files.libcom.org/files/Capitalist%20Realism_%20Is%20There%20No%20Alternat%20-%20Mark%20Fisher.pdf'
+    },
+    {
+        name: '"there is an almost unanimous agreement between the birds and the plants that you are going to destroy us all."',
+        url: 'https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/'
+    },
+    {
+        name: '"just breathe slow and steady, in and out ... you can do this."',
+        url: 'https://store.steampowered.com/app/504230/Celeste/'
+    },
+    {
+        name: `"i don't know what you kids are up to, but i do know one thing. laws are threats ..." (explicit)`,
+        url: 'https://youtu.be/0oXiFuPCU6k?si=ZPxBFR3x4Ibv1ROn&t=283'
     }
 ];
 const rentFreeIndices = ref<number[]>([]);

@@ -35,6 +35,13 @@
 
 <script setup lang="ts">
 import MainView from '@/views/MainView.vue';
+
+useHead({
+    htmlAttrs: { lang: 'en' },
+    link: [
+        { crossorigin: 'anonymous', rel: 'stylesheet', href: 'https://pub-5d18ada341a74bc585fb18395cadece5.r2.dev/dmvendor.css' },
+    ]
+});
 </script>
 
 <style lang="postcss">
@@ -44,7 +51,7 @@ body {
 
 #app {
     @apply bg-navy-darker;
-    font-family: 'Dank Mono';
+    font-family: 'dm', monospace;
 
     .pseudo-border::before {
         content: "";
