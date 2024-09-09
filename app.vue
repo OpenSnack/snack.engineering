@@ -39,7 +39,7 @@ import MainView from '@/views/MainView.vue';
 useHead({
     htmlAttrs: { lang: 'en' },
     link: [
-        { crossorigin: 'anonymous', rel: 'stylesheet', href: 'https://pub-5d18ada341a74bc585fb18395cadece5.r2.dev/dmvendor.css' },
+        { crossorigin: 'anonymous', rel: 'stylesheet', href: 'https://static.snack.engineering/dmvendor.css' },
     ]
 });
 </script>
