@@ -1,5 +1,33 @@
 <template>
     <div id="app">
+        <Head>
+            <Title>steve boddez - developer</Title>
+            <Meta
+                hid="og:title"
+                property="og:title"
+                content="steve boddez - developer"
+            />
+            <Meta
+                hid="twitter:title"
+                name="twitter:title"
+                content="steve boddez - developer"
+            />
+            <Meta
+                hid="og:type"
+                property="og:type"
+                content="website"
+            />
+            <Meta
+                hid="og:site_name"
+                property="og:site_name"
+                content="steve boddez"
+            />
+            <Meta
+                hid="og:url"
+                property="og:url"
+                content="https://snack.engineering"
+            />
+        </Head>
         <NuxtRouteAnnouncer />
         <MainView />
     </div>
@@ -15,8 +43,8 @@ body {
 }
 
 #app {
-    @apply bg-navy-darker tracking-tight;
-    font-family: 'Roobert Mono TRIAL';
+    @apply bg-navy-darker;
+    font-family: 'Dank Mono';
 
     .pseudo-border::before {
         content: "";

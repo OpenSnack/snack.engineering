@@ -184,6 +184,12 @@ const onToggle = () => {
         }
     }
 
+    &:not(.mobile) {
+        .content {
+            @apply pb-6;
+        }
+    }
+
     &.loaded {
         @apply opacity-100;
     }
