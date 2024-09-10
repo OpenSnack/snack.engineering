@@ -39,6 +39,7 @@ import MainView from '@/views/MainView.vue';
 useHead({
     htmlAttrs: { lang: 'en' },
     link: [
+        { rel: 'icon', href: '/favicon.png' },
         { crossorigin: 'anonymous', rel: 'stylesheet', href: 'https://static.snack.engineering/dmvendor.css' },
     ]
 });
