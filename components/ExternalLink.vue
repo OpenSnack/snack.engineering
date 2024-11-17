@@ -1,5 +1,6 @@
 <template>
-    <a
+    <component
+        :is="active ? 'a' : 'span'"
         class="external-link"
         target="_blank"
         :href="url"
@@ -9,7 +10,7 @@
         </div>
         <span class="link-text">{{ name }}</span>
         <Icon class="inline-flex align-middle" icon="lets-icons:external" />
-    </a>
+    </component>
 </template>
 
 <script setup lang="ts">
@@ -18,6 +19,7 @@ import { Icon, loadIcons } from '@iconify/vue';
 defineProps<{
     name: string;
     url: string;
+    active: boolean;
 }>();
 
 onBeforeMount(() => {

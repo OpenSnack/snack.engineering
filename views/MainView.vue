@@ -17,9 +17,9 @@
                 @open="activeWindow = 0"
                 @close="activeWindow = null"
             >
-                <template #content>
+                <template #content="{ active }">
                     <p class="text-balance">
-                        lead project developer at <span v-html="darkhorseLink" />
+                        lead project developer at <span v-html="active ? darkhorseLink : 'darkhorse analytics'" />
                     </p>
                     <br>
                     <p class="text-balance">
@@ -39,6 +39,7 @@
                 :mobile="isMobileSized"
                 :active="activeWindow === 1"
                 :title="projectsTitle"
+                :bg-title="projectsTitleBg"
                 :initial-x-fraction="0.4"
                 :initial-y-fraction="0.125"
                 :initial-width="520"
@@ -46,40 +47,46 @@
                 @open="activeWindow = 1"
                 @close="activeWindow = null"
             >
-                <template #content>
+                <template #content="{ active }">
                     <ExternalLink
                         name="opportunity atlas"
                         url="https://www.opportunityatlas.org/"
+                        :active="active"
                     />
                     <br><div class="link-description">which places in america offer children the best chance to rise out of poverty?</div>
                     <br>
                     <ExternalLink
                         name="aidsvu interactive map"
                         url="https://map.aidsvu.org/"
+                        :active="active"
                     />
                     <br><div class="link-description">how is the HIV epidemic impacting communities across the united states?</div>
                     <br>
                     <ExternalLink
                         name="climate vulnerability index"
                         url="https://map.climatevulnerabilityindex.org/"
+                        :active="active"
                     />
                     <br><div class="link-description">which communities face the greatest challenges from the impacts of a changing climate?</div>
                     <br>
                     <ExternalLink
                         name="social capital atlas"
                         url="https://socialcapital.org/"
+                        :active="active"
                     />
                     <br><div class="link-description">how does social capital connect to children's chances of rising out of poverty?</div>
                     <br>
                     <ExternalLink
                         name="precision for covid"
                         url="https://www.precisionforcoviddata.org/"
+                        :active="active"
                     />
                     <br><div class="link-description">how can government officials, policymakers, and citizens better plan, prepare, and respond to COVID-19?</div>
                     <br>
                     <ExternalLink
                         name="alberta biodiversity reporting"
                         url="https://orb.abmi.ca/"
+                        :active="active"
                     />
                     <br><div class="link-description">what's the status of land cover and biodiversity in alberta?</div>
                 </template>
@@ -95,11 +102,12 @@
                 @open="activeWindow = 2"
                 @close="activeWindow = null"
             >
-                <template #content>
+                <template #content="{ active }">
                     <div class="links">
                         <ExternalLink
                             name="OpenSnack"
                             url="https://github.com/OpenSnack/"
+                            :active="active"
                         >
                             <Icon icon="mdi:github" :width="20" :height="20" />
                         </ExternalLink>
@@ -107,6 +115,7 @@
                         <ExternalLink
                             name="@snack.engineering"
                             url="https://bsky.app/profile/snack.engineering"
+                            :active="active"
                         >
                             <Icon icon="ri:bluesky-fill" :width="20" :height="20" />
                         </ExternalLink>
@@ -114,6 +123,7 @@
                         <ExternalLink
                             name="@OpenSnack"
                             url="https://twitter.com/OpenSnack/"
+                            :active="active"
                         >
                             <Icon icon="mdi:twitter" :width="20" :height="20" />
                         </ExternalLink>
@@ -124,6 +134,7 @@
                         <ExternalLink
                             name="steve@dha.io"
                             url="mailto:steve@dha.io"
+                            :active="active"
                         >
                             <Icon icon="mdi:email" :width="20" :height="20" />
                         </ExternalLink>
@@ -131,6 +142,7 @@
                         <ExternalLink
                             name="my decks"
                             url="https://www.moxfield.com/users/opensnack"
+                            :active="active"
                         >
                             <Icon icon="mdi:cards" :width="20" :height="20" />
                         </ExternalLink>
@@ -173,11 +185,12 @@
                 @close="activeWindow = null"
                 @icon-click="getRandomRentFree"
             >
-                <template #content>
+                <template #content="{ active }">
                     <ExternalLink
                         v-if="currentRentFree !== null"
                         :name="rentFree[currentRentFree].name"
                         :url="rentFree[currentRentFree].url"
+                        :active="active"
                     />
                 </template>
             </DragWindow>
@@ -216,6 +229,7 @@ const toggleMouseLight = () => {
 
 const darkhorseLink = `<a target="_blank" href="https://darkhorseanalytics.com">darkhorse analytics</a>`;
 const projectsTitle = `projects (w/ ${darkhorseLink})`;
+const projectsTitleBg = 'projects (w/ darkhorse analytics)';
 
 const rentFree = [
     {

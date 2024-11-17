@@ -8,6 +8,7 @@
             <button
                 type="button"
                 class="plus-bg"
+                aria-hidden="true"
                 disabled
             >
                 <Icon
@@ -15,11 +16,12 @@
                     :width="28"
                     :height="28"
                 />
-                <span class="title" v-html="title" />
+                <span class="title" v-html="bgTitle ?? title" />
             </button>
             <button
                 type="button" 
                 class="plus-fg"
+                tabindex="0"
                 @click="onToggle"
             >
                 <Icon
@@ -36,6 +38,7 @@
                 <button
                     type="button"
                     class="header-icon-bg"
+                    aria-hidden="true"
                     disabled
                 >
                     <Icon
@@ -48,6 +51,7 @@
                     type="button"
                     ref="headerIconRef"
                     class="header-icon-fg"
+                    tabindex="0"
                     @click="emit('icon-click')"
                 >
                     <Icon
@@ -58,8 +62,8 @@
                 </button>
             </div>
         </div>
-        <div class="content">
-            <slot name="content" />
+        <div class="content" :aria-hidden="!active">
+            <slot name="content" :active="active" />
         </div>
     </div>
 </template>
@@ -72,6 +76,7 @@ const props = defineProps<{
     mobile: boolean;
     active: boolean;
     title: string;
+    bgTitle?: string;
     initialXFraction: number;
     initialYFraction: number;
     initialWidth: number;

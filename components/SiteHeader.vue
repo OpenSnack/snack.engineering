@@ -5,13 +5,17 @@
         ref="siteHeader"
     >
         <div class="my-name">
-            <span class="my-name-bg">steve boddez</span>
-            <span class="my-name-fg">steve boddez</span>
+            <span
+                class="my-name-bg"
+                aria-hidden="true"
+            >steve boddez</span>
+            <NuxtLink to="/" class="my-name-fg">steve boddez</NuxtLink>
         </div>
         <button
             type="button"
             class="lightbulb-bg"
             disabled
+            aria-hidden="true"
             ref="lightbulb"
         >
             <Icon
@@ -23,6 +27,7 @@
         <button
             type="button"
             class="lightbulb-fg"
+            :aria-label="lightbulbLabel"
             @click="emit('toggle-mouse-light')"
         >
             <Icon
@@ -45,6 +50,13 @@ const props = defineProps<{
 const emit = defineEmits<{
     (event: 'toggle-mouse-light'): void;
 }>();
+
+const lightbulbLabel = computed(() => {
+    if (lightsOn.value) {
+        return 'Turn off the lights (cooler)';
+    }
+    return 'Turn on the lights (better contrast)';
+});
 
 onBeforeMount(() => {
     loadIcons(['clarity:lightbulb-line']);
@@ -86,7 +98,7 @@ const { maskImage: maskImageButton } = useMouseLight(lightbulb, lightsOn, () => 
         @apply bg-sand-light/15;
     }
 
-    &.lightsOn .lightbulb-fg {
+    &.lightsOn .lightbulb-fg, &.lightsOn .my-name-fg {
         @apply opacity-100;
     }
 
