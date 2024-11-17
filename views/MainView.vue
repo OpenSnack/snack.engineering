@@ -105,6 +105,13 @@
                         </ExternalLink>
                         <br>
                         <ExternalLink
+                            name="@snack.engineering"
+                            url="https://bsky.app/profile/snack.engineering"
+                        >
+                            <Icon icon="ri:bluesky-fill" :width="20" :height="20" />
+                        </ExternalLink>
+                        <br>
+                        <ExternalLink
                             name="@OpenSnack"
                             url="https://twitter.com/OpenSnack/"
                         >
@@ -118,14 +125,14 @@
                             name="steve@dha.io"
                             url="mailto:steve@dha.io"
                         >
-                            <Icon icon="mdi:email-outline" :width="20" :height="20" />
+                            <Icon icon="mdi:email" :width="20" :height="20" />
                         </ExternalLink>
                         <br>
                         <ExternalLink
                             name="my decks"
                             url="https://www.moxfield.com/users/opensnack"
                         >
-                            <Icon icon="mdi:cards-outline" :width="20" :height="20" />
+                            <Icon icon="mdi:cards" :width="20" :height="20" />
                         </ExternalLink>
                     </div>
                 </template>
