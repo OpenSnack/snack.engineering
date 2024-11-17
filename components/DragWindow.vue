@@ -160,8 +160,13 @@ const onToggle = () => {
     &.mobile {
         @apply relative w-full;
 
+        &:not(.active) {
+            @apply pb-5;
+        }
+
+        /* page height extends to content height even when content's parent height is 0 */
         &:not(.active) .content {
-            @apply h-0;
+            @apply hidden;
         }
 
         .content {
@@ -203,7 +208,7 @@ const onToggle = () => {
     }
 
     .plus-bg, .plus-fg {
-        @apply flex gap-2 p-1 text-left;
+        @apply flex w-full gap-2 p-1 text-left;
         @apply opacity-50 text-sand-light;
         max-width: calc(100% - 40px);
     }

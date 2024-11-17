@@ -156,7 +156,7 @@
             <DragWindow
                 :mobile="isMobileSized"
                 :active="activeWindow === 4"
-                title="living rent-free in my head"
+                title="living rent‑free in my head"
                 :initial-x-fraction="0.125"
                 :initial-y-fraction="0.75"
                 :initial-width="500"

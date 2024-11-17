@@ -1,4 +1,4 @@
-import { useElementBounding, useMouseInElement, type MaybeElementRef } from '@vueuse/core';
+import { useElementBounding, useMouseInElement, useResizeObserver, type MaybeElementRef } from '@vueuse/core';
 
 const LIGHT_RADIUS = 400;
 
@@ -17,12 +17,28 @@ export function useMouseLight(
     const lightsOn = toRef(lightsOnGetter);
     const mobile = toRef(mobileGetter);
     const { elementX, elementY } = useMouseInElement(element);
-    const { y } = useElementBounding(element);
+    const { y, update } = useElementBounding(element);
     const inWindow = ref(false);
     if (import.meta.client) {
         document.body.addEventListener('mousemove', () => { inWindow.value = true; });
         document.body.addEventListener('mouseleave', () => { inWindow.value = false; });
     }
+
+    // useElementBounding won't auto-update with certain page changes (eg. when we open
+    // a different drag window.) on mobile, we watch document.body and update manually
+    const stopResize = ref<(() => void) | null>(null);
+    watch(mobile, m => {
+        if (m && !stopResize.value) {
+            const { stop } = useResizeObserver(document.body, () => {
+                update();
+            });
+            stopResize.value = stop;
+        }
+        if (!m && stopResize.value) {
+            stopResize.value();
+            stopResize.value = null;
+        }
+    }, { immediate: true });
 
     return {
         maskImage: computed(() => {
